@@ -2,26 +2,17 @@
 
 ![Alt text](CSMAE.png?raw=true "Model: Cross-Sensor Masked Autoencoders")
 
-This repository contains code of the paper [Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing](TODO). This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) by [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein), [Gencer Sumbul](https://people.epfl.ch/gencer.sumbul?lang=en), [Kai Norman Clasen](https://rsim.berlin/team/members/kai-norman-clasen) and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
+This repository contains code of the paper _Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing_. This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) by [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein), [Gencer Sumbul](https://people.epfl.ch/gencer.sumbul?lang=en), [Kai Norman Clasen](https://rsim.berlin/team/members/kai-norman-clasen) and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
 
 If you use this code, please cite our paper given below:
 
-TODO - which bibtex file?
-<!-- > L. Hackel and K. N. Clasen and M. Ravanbakhsh and B. Demіr, "LiT-4-RSVQA: Lightweight Transformer-based Visual Question Answering in Remote Sensing", IEEE International Geoscience and Remote Sensing Symposium, Pasadena, California, 2023.
-
 ```bibtex
 @INPROCEEDINGS{10281674,
-    author={Hackel, Leonard and Clasen, Kai Norman and Ravanbakhsh, Mahdyar and Demir, Begüm},
-    booktitle={IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium}, 
-    title={LIT-4-RSVQA: Lightweight Transformer-Based Visual Question Answering in Remote Sensing}, 
-    year={2023},
-    volume={},
-    number={},
-    pages={2231-2234},
-    doi={10.1109/IGARSS52108.2023.10281674}
+    author={Hackstein, Jakob and Sumbul, Gencer and Clasen, Kai Norman and Demir, Begüm},
+    title={Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing}, 
+    year={2024},
 }
-``` -->
-
+```
 
 ## Training CSMAE models
 
@@ -38,7 +29,7 @@ Then, pre-training can be started by running `train.py` with two flags required 
 python train.py --config-path ./ --config-name csmae.yaml
 ```
 
-Model weights of trained models with config files are stored under `trained_models`.
+Model weights of trained models with config files are stored under `/trained_models`.
 
 ## Acknowledgement
 
