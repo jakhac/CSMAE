@@ -7,7 +7,7 @@ This repository contains code of the paper _Exploring Masked Autoencoders for Se
 If you use this code, please cite our paper given below:
 
 ```bibtex
-@INPROCEEDINGS{10281674,
+@ARTICLE{10281674,
     author={Hackstein, Jakob and Sumbul, Gencer and Clasen, Kai Norman and Demir, Begüm},
     title={Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing}, 
     year={2024},
