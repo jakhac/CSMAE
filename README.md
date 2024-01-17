@@ -2,7 +2,7 @@
 
 ![Alt text](CSMAE.png?raw=true "Model: Cross-Sensor Masked Autoencoders")
 
-This repository contains code of the paper [Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing](https://arxiv.org/abs/2105.03647). This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) by [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein), [Gencer Sumbul](https://people.epfl.ch/gencer.sumbul?lang=en), [Kai Norman Clasen](https://rsim.berlin/team/members/kai-norman-clasen) and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
+This repository contains code of the paper [Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing](https://arxiv.org/abs/2401.07782). This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) by [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein), [Gencer Sumbul](https://people.epfl.ch/gencer.sumbul?lang=en), [Kai Norman Clasen](https://rsim.berlin/team/members/kai-norman-clasen) and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
 
 If you use this code, please cite our paper given below:
 
@@ -10,8 +10,8 @@ If you use this code, please cite our paper given below:
 @ARTICLE{hackstein2024exploring,
     author={Hackstein, Jakob and Sumbul, Gencer and Clasen, Kai Norman and Demir, Begüm},
     title={Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing},
-    url={https://arxiv.org/abs/2105.03647},
-    eprint={2302.14256},
+    url={https://arxiv.org/abs/2401.07782},
+    eprint={2401.07782},
     archivePrefix={arXiv},
     year={2024},
 }
