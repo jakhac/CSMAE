@@ -2,7 +2,7 @@
 
 ![Alt text](CSMAE.png?raw=true "Model: Cross-Sensor Masked Autoencoders")
 
-This repository contains code of the paper [Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing](https://arxiv.org/abs/2401.07782). This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) by [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein), [Gencer Sumbul](https://people.epfl.ch/gencer.sumbul?lang=en), [Kai Norman Clasen](https://rsim.berlin/team/members/kai-norman-clasen) and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
+This repository contains the code of the paper [Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing](https://arxiv.org/abs/2401.07782). This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) by [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein), [Gencer Sumbul](https://people.epfl.ch/gencer.sumbul?lang=en), [Kai Norman Clasen](https://rsim.berlin/team/members/kai-norman-clasen) and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
 
 If you use this code, please cite our paper given below:
 
@@ -19,14 +19,14 @@ If you use this code, please cite our paper given below:
 
 ## Training CSMAE models
 
-First, set up a python (conda) environment according the `environment.yaml` file. Modify the `csmae.yaml` according to your needs to configure different CSMAE models. You can use the current configuration which corresponds to our best performing model. However, a few entries specific to your system are required:
+First, set up a python (conda) environment based on `environment.yaml` file. Modify the `csmae.yaml` according to your needs to configure different CSMAE models. You can use the current configuration which corresponds to our best performing model. However, a few entries specific to your system are required:
 
-- The training progess is tracked on [Weights & Biases](https://wandb.ai/). To this end, the entity and project has to be entered in the `wandb` attribute.
+- The training progress is tracked on [Weights & Biases](https://wandb.ai/). To this end, the entity and project have to be entered in the `wandb` attribute.
 
-- For training, [BigEarthNet-MM](https://bigearth.net/) is required. The dataloader requires a LMDB format which is explained [here](http://docs.kai-tub.tech/bigearthnet_encoder/intro.html). Finally, the `data.root_dir` should point to the directiory containing the LMDB file and `data.split_dir` should point the directory with csv-file splits of the dataset.
+- For training, [BigEarthNet-MM](https://bigearth.net/) is required. The dataloader requires the LMDB format which is explained [here](http://docs.kai-tub.tech/bigearthnet_encoder/intro.html). Finally, the `data.root_dir` should point to the directory containing the LMDB file and `data.split_dir` should point to the directory with CSV-file splits of the dataset.
 
 
-Then, pre-training can be started by running `train.py` with two flags required by hydra:
+Then, pre-training can be started by running `train.py` with two flags required by Hydra:
 
 ```bash
 python train.py --config-path ./ --config-name csmae.yaml
