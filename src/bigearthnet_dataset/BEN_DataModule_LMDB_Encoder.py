@@ -31,11 +31,6 @@ class BENDataSet(Dataset):
     ):
         super().__init__()
         self.root_dir = root_dir
-
-        host = socket.gethostname()
-        self.root_dir = "/data/leonard/BEN_VQA/"
-        Messages.hint(f"Training on {host}. Set root_dir to {self.root_dir}")
-
         self.split_dir = split_dir
         self.split = split
         self.lmdb_dir = os.path.join(self.root_dir, "BigEarthNetEncoded.lmdb")

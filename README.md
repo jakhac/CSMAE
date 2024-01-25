@@ -1,6 +1,6 @@
 # Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing
 
-![Alt text](CSMAE.png?raw=true "Model: Cross-Sensor Masked Autoencoders")
+![Alt text](csmae.png?raw=true "Model: Cross-Sensor Masked Autoencoders")
 
 This repository contains the code of the paper [Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing](https://arxiv.org/abs/2401.07782). This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) by [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein), [Gencer Sumbul](https://people.epfl.ch/gencer.sumbul?lang=en), [Kai Norman Clasen](https://rsim.berlin/team/members/kai-norman-clasen) and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
 
@@ -19,20 +19,34 @@ If you use this code, please cite our paper given below:
 
 ## Training CSMAE models
 
-First, set up a python (conda) environment based on `environment.yaml` file. Modify the `csmae.yaml` according to your needs to configure different CSMAE models. You can use the current configuration which corresponds to our best performing model. However, a few entries specific to your system are required:
+1. First, set up a python (conda) environment based on the `environment.yaml` file. 
 
-- The training progress is tracked on [Weights & Biases](https://wandb.ai/). To this end, the entity and project have to be entered in the `wandb` attribute.
+2. Training and model parameters can be adjusted via yaml-files. The paper introduces four different CSMAE variants, termed _CECD_, _CESD_, _SECD_ and _SESD_, and each variant has a pre-defined `csmae_<variant>.yaml` file already. You can also modify them according to your needs and configure new CSMAE models. To do so, check the explanations for relevant parameters in existing `csmae.yaml` files.
 
-- For training, [BigEarthNet-MM](https://bigearth.net/) is required. The dataloader requires the LMDB format which is explained [here](http://docs.kai-tub.tech/bigearthnet_encoder/intro.html). Finally, the `data.root_dir` should point to the directory containing the LMDB file and `data.split_dir` should point to the directory with CSV-file splits of the dataset.
+3. Independent on your yaml-file, two entries have to be completed:
 
+    - The training progress is tracked on [Weights & Biases](https://wandb.ai/). To this end, the `wandb.entity` and `wandb.project` fields have to be entered in the `wandb` attribute.
 
-Then, pre-training can be started by running `train.py` with two flags required by Hydra:
+    - For training, [BigEarthNet-MM](https://bigearth.net/) is required. The dataloader requires the LMDB format which is explained [here](http://docs.kai-tub.tech/bigearthnet_encoder/intro.html). Finally, the `data.root_dir` should point to the directory containing the LMDB file and `data.split_dir` should point to the directory containing CSV-file splits of the dataset.
+
+4. Then, pre-training can be started by running `train.py` with two flags required by Hydra:
+    ```bash
+    python train.py --config-path ./ --config-name csmae_<variant>.yaml
+    ```
+
+5. Checkpoints of trained models with config files are stored under `./trained_models`.
+
+## Evaluation of CSMAE models
+
+To compute image retrieval results, run the `retrieval.py` script. The two required flags are
+- name of the folder, which contains the model checkpoint to be evaluated
+- the GPU device number used for inference.
+
+For instance, a model stored under `./trained_models/abcd1234/` can be evaluated with
 
 ```bash
-python train.py --config-path ./ --config-name csmae.yaml
+python retrieval.py abcd1234 0
 ```
-
-Model weights of trained models with config files are stored under `/trained_models`.
 
 ## Acknowledgement
 

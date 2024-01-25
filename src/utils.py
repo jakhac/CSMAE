@@ -80,10 +80,8 @@ class Checkpointer(Callback):
         """
 
         if trainer.is_global_zero:
-            args = OmegaConf.to_container(self.cfg)
-            args["wandb_run_id"] = getattr(self, "wandb_run_id", None)
-            json_path = self.path / "args.json"
-            json.dump(args, open(json_path, "w"), default=lambda o: "<not serializable>")
+            yaml_path = self.path / "args.yaml"
+            OmegaConf.save(self.cfg, yaml_path)
 
     def save(self, trainer: pl.Trainer):
         """Saves current checkpoint.

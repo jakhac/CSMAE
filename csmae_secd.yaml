@@ -4,6 +4,7 @@ defaults:
   - override hydra/job_logging: disabled
 
 wandb:
+  enabled: True
   entity: <entity>
   project: <project>
 
@@ -25,36 +26,35 @@ augmentations:
   crop_size: 120
   num_crops: 1
 
-
 backbone:
   name: "vit_base"
   kwargs:
-    patch_size: 15
+    patch_size: 15                      # patch size for ViT backbone
     img_size: 120
     in_chans: 12
-    multi_sensor_encoder_depth: 10
-    cross_sensor_encoder_depth: 2
+    multi_sensor_encoder_depth: 10      # Depth for Multi-Sensor-Encoder
+    cross_sensor_encoder_depth: 2       # Depth for Cross-Sensor-Encoder
     masking_strategy: 'random'          # 'identical' | 'disjoint' | 'random'
     global_pool: 'avg'                  # 'avg' | 'token'
 
 method_kwargs:
   decoder_embed_dim: 512
-  decoder_depth: 8
+  decoder_depth: 8                      # Depth for decoder
   decoder_num_heads: 16
-  decoding_strategy: 'specific'         # 'common' | 'specific'
+  decoding_strategy: 'common'           # 'common' | 'specific'
   reconstruction_strategy: 'disjoint'   # 'identical' | 'disjoint'
-  mask_ratio: 0.5
+  mask_ratio: 0.5                       # % of tokens to be masked out
   norm_pix_loss: False                  # normalize pixel values in MSE loss
-  apply_umr_loss: True
-  apply_cmr_loss: True
-  apply_mde_loss: False
-  apply_mim_loss: True
-  mim_temp: 0.5
+  apply_umr_loss: True                  # Uni-Modal-Reconstruction loss
+  apply_cmr_loss: True                  # Cross-Modal-Reconstruction loss
+  apply_mde_loss: False                 # MDE loss
+  apply_mim_loss: True                  # MIM loss
+  mim_temp: 0.5                         # Temperature applied in MIM loss
 
 data:
   dataset: "ben"
   root_dir: <path/to/lmdb/file>
-  split_dir: <path/to/[train,test,val].csv>
+  split_dir: <path/to/[train,test,val].csv files>
   num_workers: 10
   num_bands: 12
   img_size: 120
@@ -82,7 +82,7 @@ checkpoint:
 find_unused_parameters: False
 seed: 42
 
-max_epochs: 150
+max_epochs: 1
 devices: [0]
 sync_batchnorm: True
 accelerator: "gpu"
