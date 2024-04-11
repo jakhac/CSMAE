@@ -54,7 +54,9 @@ This work is supported by the European Research Council
 (ERC) through the ERC-2017-STG BigEarth Project under
 Grant 759764 and by the European Space Agency (ESA)
 through the Demonstrator Precursor Digital Assistant Interface
-For Digital Twin Earth (DA4DTE) Project.
+For Digital Twin Earth (DA4DTE) Project and by the German Ministry for
+Economic Affairs and Climate Action through the AI-Cube
+Project under Grant 50EE2012B.
 
 The code for pre-training is inspired by [solo-learn](https://github.com/vturrisi/solo-learn) and the code for dataloading partly stems from [ConfigILM](https://github.com/lhackel-tub/ConfigILM).
 
