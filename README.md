@@ -48,13 +48,37 @@ For instance, a model stored under `./trained_models/abcd1234/` can be evaluated
 python retrieval.py abcd1234 0
 ```
 
+## Model Weights
+
+We share model weights for the best-performing CSMAE variants [here](https://tubcloud.tu-berlin.de/s/E4RcbGjzSrjBq7R). To load weights into a backbone, follow the following code snippet.
+
+```python
+import torch
+from src.csmae_backbone import CSMAEBackbone
+from omegaconf import OmegaConf
+
+cfg = OmegaConf.load('./checkpoints/cecd/cfg.yaml')
+
+model = CSMAEBackbone(**cfg.kwargs)
+
+state_dict = torch.load('./checkpoints/cecd/weights.ckpt', map_location="cpu")['state_dict']
+for k in list(state_dict.keys()):
+    if "backbone" in k:
+        state_dict[k.replace("backbone.", "")] = state_dict[k]
+    del state_dict[k]
+
+model.load_state_dict(state_dict, strict=True)
+```
+
 ## Acknowledgement
 
 This work is supported by the European Research Council
 (ERC) through the ERC-2017-STG BigEarth Project under
 Grant 759764 and by the European Space Agency (ESA)
 through the Demonstrator Precursor Digital Assistant Interface
-For Digital Twin Earth (DA4DTE) Project.
+For Digital Twin Earth (DA4DTE) Project and by the German Ministry for
+Economic Affairs and Climate Action through the AI-Cube
+Project under Grant 50EE2012B.
 
 The code for pre-training is inspired by [solo-learn](https://github.com/vturrisi/solo-learn) and the code for dataloading partly stems from [ConfigILM](https://github.com/lhackel-tub/ConfigILM).
 
