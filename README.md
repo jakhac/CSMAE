@@ -57,11 +57,11 @@ import torch
 from src.csmae_backbone import CSMAEBackbone
 from omegaconf import OmegaConf
 
-cfg = OmegaConf.load('./checkpoints/cecd/cfg.yaml')
-
+csmae_variant = 'sesd'
+cfg = OmegaConf.load(f'./checkpoints/{csmae_variant}/cfg.yaml')
 model = CSMAEBackbone(**cfg.kwargs)
 
-state_dict = torch.load('./checkpoints/cecd/weights.ckpt', map_location="cpu")['state_dict']
+state_dict = torch.load(f'./checkpoints/{csmae_variant}/weights.ckpt', map_location="cpu")['state_dict']
 for k in list(state_dict.keys()):
     if "backbone" in k:
         state_dict[k.replace("backbone.", "")] = state_dict[k]
