@@ -6,6 +6,9 @@ wandb/
 wandb*/
 !scripts/**
 
+checkpoints/
+test.ipynb
+
 # umap dir
 auto_umap/
 

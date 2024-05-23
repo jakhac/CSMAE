@@ -50,7 +50,7 @@ python retrieval.py abcd1234 0
 
 ## Model Weights
 
-We share model weights for the best-performing CSMAE variants [here](https://tubcloud.tu-berlin.de/s/E4RcbGjzSrjBq7R). To load weights into a backbone, follow the following code snippet.
+We share model weights for the best-performing CSMAE variants [here](https://tubcloud.tu-berlin.de/s/E4RcbGjzSrjBq7R). To load weights into a backbone, see the following code snippet.
 
 ```python
 import torch
