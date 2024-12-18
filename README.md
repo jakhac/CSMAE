@@ -6,7 +6,7 @@ This repository contains the code of the paper [Exploring Masked Autoencoders fo
 
 If you use this code, please cite our paper given below:
 
-> J. Hackstein, G. Sumbul, K. N. Clasen, B. Demir, "[Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing](https://arxiv.org/abs/2401.07782)", IEEE Transactions on Geoscience and Remote Sensing, 2024, https://doi.org/10.1109/TGRS.2024.3517150.
+> J. Hackstein, G. Sumbul, K. N. Clasen, B. Demir, "[Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing](https://arxiv.org/abs/2401.07782)", IEEE Transactions on Geoscience and Remote Sensing, doi: 10.1109/TGRS.2024.3517150, 2024
 
 ```bibtex
 @article{hackstein2024exploring,
