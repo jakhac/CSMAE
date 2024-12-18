@@ -6,16 +6,17 @@ This repository contains the code of the paper [Exploring Masked Autoencoders fo
 
 If you use this code, please cite our paper given below:
 
+> J. Hackstein, G. Sumbul, K. N. Clasen, B. Demir, "[Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing](https://arxiv.org/abs/2401.07782)", IEEE Transactions on Geoscience and Remote Sensing, 2024.
+
 ```bibtex
-@ARTICLE{hackstein2024exploring,
+@article{hackstein2024exploring,
     author={Hackstein, Jakob and Sumbul, Gencer and Clasen, Kai Norman and Demir, Begüm},
+    journal={IEEE Transactions on Geoscience and Remote Sensing}, 
     title={Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing},
-    url={https://arxiv.org/abs/2401.07782},
-    eprint={2401.07782},
-    archivePrefix={arXiv},
-    year={2024},
+    year={2024}
 }
 ```
+
 
 ## Training CSMAE models
 
